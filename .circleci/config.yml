@@ -1,0 +1,14 @@
+version: 2
+jobs:
+    build:
+        docker:
+            - image: docker:17.07-ce-git
+        working_directory: /go/src/github.com/ieee0824/circleci-docker-multi-stage-build
+        steps:
+            - checkout
+            - setup_remote_docker:
+                version: 17.05.0-ce
+            - run:
+                name: test build
+                command: |
+                    docker build .
