@@ -2,7 +2,7 @@ version: 2
 jobs:
     build:
         docker:
-            - image: docker:17.07-ce-git
+            - image: docker:17.07.0-ce-git
         working_directory: /go/src/github.com/ieee0824/circleci-docker-multi-stage-build
         steps:
             - checkout
